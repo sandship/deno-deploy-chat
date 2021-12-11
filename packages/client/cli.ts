@@ -1,3 +1,5 @@
+const yourName = prompt("Your Name: ")
+
 const logError = (msg: string) => {
   console.error(msg);
 };
@@ -10,7 +12,7 @@ const handleConnected = (ws: WebSocket) => {
 const handleMessage = (ws: WebSocket, data: string) => {
   console.log("SERVER >> " + data);
   const reply = prompt("Client >> ");
-  ws.send(reply ?? "No reply");
+  ws.send(`[${yourName}] ${reply ?? "No reply"}`);
 };
 
 const handleError = (e: Event | ErrorEvent) =>

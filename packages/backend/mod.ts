@@ -6,8 +6,9 @@ const handleConnected = () => {
   console.log("Connected to client ...");
 };
 
-const broadCast = (sockets: Set<WebSocket>, data: string) =>
-  sockets.forEach((ws) => ws.send(data));
+const broadCast = (sockets: Set<WebSocket>, data: string) =>{
+  console.log(data)
+  sockets.forEach((ws) => ws.send(data));}
 
 const handleError = (e: Event | ErrorEvent) =>
   console.log(e instanceof ErrorEvent ? e.message : e.type);
